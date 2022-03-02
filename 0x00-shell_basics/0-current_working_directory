@@ -1,3 +1,1 @@
-#!/bin/bash
-bin/pwd
-
+#!/bin/bash bin/pwd
