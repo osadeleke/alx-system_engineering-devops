@@ -1,1 +1,1 @@
-Shell Permissions Dir
+Shell Permissions Directory
