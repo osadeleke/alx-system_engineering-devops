@@ -12,7 +12,7 @@
    
     <li><a href="https://github.com/osadeleke/alx-system_engineering-devops/blob/master/0x03-shell_variables_expansions/2-path"><strong>2-path:</strong></a> Script that Add /action to the PATH. /action should be the last directory the shell looks into when looking for a program.</li>
     
-    <li><a href=""><strong></strong></a> Script that </li>
+    # <li><a href=""><strong></strong></a> Script that </li>
     
-    <li><a href=""><strong></strong></a> Script that </li>
+    # <li><a href=""><strong></strong></a> Script that </li>
 </ul>
