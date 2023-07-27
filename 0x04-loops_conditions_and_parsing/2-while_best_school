@@ -1,6 +1,5 @@
 #!/usr/bin/env bash
 # display Best School 10 times with while loop
-
 n=0
 while ((n < 10))
 do
