@@ -1,0 +1,18 @@
+#!/usr/bin/env bash
+# displays numbers 1 to 20 with 4, 9 and 17 chinese superstitions
+n=1
+while [ $n -le 20 ]
+do
+	echo "$n"
+	if [ $n -eq 4 ]
+	then
+		echo "bad luck from China"
+	elif [ $n -eq 9 ]
+	then
+		echo "bad luck from Japan"
+	elif [ $n -eq 17 ]
+	then
+		echo "bad luck from Italy"
+	fi
+	n=$((n + 1))
+done
