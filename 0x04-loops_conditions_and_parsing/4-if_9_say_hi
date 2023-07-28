@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+# displays Best School 10 times but on 9th iteration also displays Hi
+n=0
+while ((n < 10))
+do
+	echo "Best School"
+	if [ $n -eq 8 ]
+	then
+		echo "Hi"
+	fi
+	n=$((n + 1))
+done
