@@ -1,7 +1,6 @@
 #!/usr/bin/env bash
 # display To Infinity and Beyond
-n=1
-until [ $n -eq 2 ]
+while true
 do
 	echo "To infinity and beyond"
 	sleep 2
