@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+# display content of current directory
+LIST="$(ls)"
+for i in "$LIST"; do
+	echo "${i//^../}"
+done

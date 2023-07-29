@@ -1,0 +1,19 @@
+#!/usr/bin/env bash
+# displays numbers from 1 to 100. Fizz multiple of 3 and Buzz at mul of 5
+n=1
+while [ $n -lt 101 ]
+do
+	if [ $((n % 15)) -eq 0 ]
+	then
+		echo "FizzBuzz"
+	elif [ $((n % 3)) -eq 0 ]
+	then
+		echo "Fizz"
+	elif [ $((n % 5)) -eq 0 ]
+	then
+		echo "Buzz"
+	else
+		echo $n
+	fi
+	n=$((n + 1))
+done
