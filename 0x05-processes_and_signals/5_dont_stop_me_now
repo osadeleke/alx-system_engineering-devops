@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+# kill last running bash process
+kill "$(pgrep "bash" | tail -n 3 | head -n 1)"
