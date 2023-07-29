@@ -1,3 +1,0 @@
-#!/usr/bin/env bash
-# kill last running bash process
-kill "$(pgrep -f 'to_infinity_and_beyond')"
