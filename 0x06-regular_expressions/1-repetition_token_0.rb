@@ -1,3 +1,3 @@
 #!/usr/bin/env ruby
-# checks a word
-puts ARGV[0].scan(/hbt{2,6}n/).join
+# checks for matching cases
+puts ARGV[0].scan(/hbt{2,5}n/).join
