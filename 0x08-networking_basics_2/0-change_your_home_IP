@@ -1,4 +1,6 @@
 #!/usr/bin/env bash
 # configures an ubuntu server.
-echo -e "127.0.0.2\tlocalhost" >> /etc/hosts
-echo -e "8.8.8.8\tfacebook.com" >> /etc/hosts
+grep -v "localhost" /etc/hosts > hosts
+echo -e "127.0.0.2\tlocalhost\n8.8.8.8\tfacebook.com" > /etc/hosts
+cat hosts >> /etc/hosts
+rm -rf hosts
