@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+# connecting to alx server with private key
+ssh ubuntu@34.207.156.107
