@@ -1,3 +1,4 @@
+# Creates a new file with permissions
 file { '/tmp/school':
   ensure  => present,
   content => 'I love Puppet',
