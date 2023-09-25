@@ -2,5 +2,6 @@
 # install nginx web server with fw requirements and default home page
 sudo apt-get -y update
 sudo apt-get -y install nginx
-sudo ufw allow 'Nginx HTTP'
+sed -i '\#root /var/www/html;#a\
+\n\tlisten 80 default_server;\n' /etc/nginx/sites-available/default
 echo "Hello world!" | sudo tee /var/www/html/index.html > /dev/null
