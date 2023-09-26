@@ -2,7 +2,6 @@
 # install nginx web server with fw requirements and default home page
 sudo apt-get -y update
 sudo apt-get -y install nginx
-echo "Hello World!" | sudo tee /var/www/html/index.html > /dev/null
-sed -i '\#root /var/www/html;#a\
-\tlocation /redirect_me/ {\n\t\treturn 301;\n\t}' /etc/nginx/sites-available/default
+echo 'Hello World!' | sudo tee /var/www/html/index.html > /dev/null
+sed -i '\#root /var/www/html;#a\\tlocation /redirect_me/ {\n\t\treturn 301;\n\t}' /etc/nginx/sites-available/default
 sudo system nginx restart
