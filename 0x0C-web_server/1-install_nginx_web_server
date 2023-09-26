@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 # install nginx web server with fw requirements and default home page
-sudo apt -y update
+sudo apt update -y
 
-sudo apt -y install nginx
+sudo apt install nginx -y
 
 echo 'Hello world!' | sudo tee /var/www/html/index.nginx-debian.html
 
