@@ -19,4 +19,4 @@ echo "server {
 	}
 }" | sudo tee /etc/nginx/sites-available/default
 
-sudo service nginx restart
+sudo system nginx restart
