@@ -1,26 +1,3 @@
 #!/usr/bin/env bash
 # install nginx web server with fw requirements and default home page
 
-# sudo apt-get -y update
-# sudo apt-get -y install nginx
-
-# echo 'Hello World!' | sudo tee /var/www/html/index.nginx-debian.html
-
-echo "server {
-        listen 80 default_server;
-        listen [::}:80 default_server;
-
-        root /var/www/html;
-        
-        index index.html index.htm index.nginx-debian.html;
-
-        location /redirect_me/ {
-                return 301 https://www.youtube.com/watch?v=QH2-TGUlwu4;
-        }
-
-	error_page 404 /404.html;
-}" | sudo tee /etc/nginx/sites-available/default
-
-echo "Ceci n'est pas une page\n" | sudo tee /404.html
-
-sudo system nginx restart
