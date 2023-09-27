@@ -23,4 +23,4 @@ echo "server {
 
 echo "Ceci n'est pas une page\n" | sudo tee /404.html
 
-sudo systemctl reload nginx
+sudo system nginx restart
