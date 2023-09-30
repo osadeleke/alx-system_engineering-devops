@@ -1,4 +1,3 @@
 #!/usr/bin/env bash
 # Fix my server to server Hello holberton on call
-
-sudo service apache2 start
+service apache2 restart
