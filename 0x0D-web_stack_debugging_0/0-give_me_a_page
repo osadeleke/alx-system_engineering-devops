@@ -1,2 +1,9 @@
 #!/usr/bin/env bash
 # Fix my server to server Hello holberton on call
+
+# Install apache
+apt-get update
+apt-get install apache2
+
+# Start apache
+service apache2 start
