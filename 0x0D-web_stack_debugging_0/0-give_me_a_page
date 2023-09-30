@@ -2,8 +2,8 @@
 # Fix my server to server Hello holberton on call
 
 # Install apache
-apt-get update
-apt-get install apache2
+sudo apt-get update -y
+sudo apt-get install -y apache2
 
 # Start apache
-service apache2 start
+sudo service apache2 start
