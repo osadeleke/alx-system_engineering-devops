@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+# fix nginx not running
+pkill nginx
+sudo sed -i '/^http\s*{/a\      server {\n\             listen 80;\n\   }' /etc/nginx/nginx.conf
+sudo service nginx restart
