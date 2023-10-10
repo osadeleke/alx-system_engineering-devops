@@ -1,4 +1,4 @@
 #!/usr/bin/env bash
 # fix nginx not running
 sudo sed -i 's/[0-9]\+ default_server/80 default_server/' /etc/nginx/sites-enabled/default
-sudo service nginx reload
+sudo service nginx restart
