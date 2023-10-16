@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+# fix nginx to run as nginx user not root
+sudo useradd nginx
+sudo sed -i '1d' /etc/nginx/nginx.conf
+sudo sed -i 's/^\s*listen 80 default_server;/\tlisten 8080 default_server;/g' /etc/nginx/sites-enabled/default
+sudo sed -i 's/^\s*listen \[::\]:80 default_server;/\tlisten \[::\]:8080 default_server;/g' /etc/nginx/sites-enabled/default
+chown -R nginx:nginx /var/log/nginx && chown -R nginx:nginx /var/lib/nginx && chown -R :nginx /run && chmod g+w /run
+pkill nginx
+sudo -u nginx nginx
