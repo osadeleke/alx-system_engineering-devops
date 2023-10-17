@@ -1,0 +1,32 @@
+#!/usr/bin/env bash
+# get info about domains and subdomains
+
+domain_only() {
+	ipaddress=$(dig www."$1" | grep -A1 'ANSWER SECTION:' | awk '{print $5}' | tr -d "\n")
+	record=$(dig www."$1" | grep -A1 'ANSWER SECTION:' | awk '{print $4}' | tr -d "\n")
+	echo "The subdomain www is a $record record and points to $ipaddress"
+
+	ipaddress=$(dig lb-01."$1" | grep -A1 'ANSWER SECTION:' | awk '{print $5}' | tr -d "\n")
+	record=$(dig lb-01."$1" | grep -A1 'ANSWER SECTION:' | awk '{print $4}' | tr -d "\n")
+	echo "The subdomain lb-01 is a $record record and points to $ipaddress"
+	
+	ipaddress=$(dig web-01."$1" | grep -A1 'ANSWER SECTION:' | awk '{print $5}' | tr -d "\n")
+	record=$(dig web-01."$1" | grep -A1 'ANSWER SECTION:' | awk '{print $4}' | tr -d "\n")
+	echo "The subdomain web-01 is a $record record and points to $ipaddress"
+	
+	ipaddress=$(dig web-02."$1" | grep -A1 'ANSWER SECTION:' | awk '{print $5}' | tr -d "\n")
+	record=$(dig web-02."$1" | grep -A1 'ANSWER SECTION:' | awk '{print $4}' | tr -d "\n")
+	echo "The subdomain web-02 is a $record record and points to $ipaddress"
+}
+
+domain_with_sub() {
+	ipaddress=$(dig "$2"."$1" | grep -A1 'ANSWER SECTION:' | awk '{print $5}' | tr -d "\n")
+	record=$(dig "$2"."$1" | grep -A1 'ANSWER SECTION:' | awk '{print $4}' | tr -d "\n")
+	echo "The subdomain $2 is a $record record and points to $ipaddress"
+}
+
+if [ $# -eq 1 ]; then
+	domain_only "$1"
+elif [ $# -eq 2 ]; then
+	domain_with_sub "$1" "$2"
+fi
