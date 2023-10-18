@@ -1,7 +1,6 @@
 #!/usr/bin/env bash
 # fix nginx to run as nginx user not root
-sudo sed -i '1s/^/# /' /etc/nginx/nginx.conf
-pkill "$(netstat -lpn | grep 8080 | awk '{print $7}' | cut -d'/' -f2)"
+pkill apache2
+sudo chmod 644 /etc/nginx/nginx.conf
 sudo sed -i 's/80/8080/g' /etc/nginx/sites-enabled/default
-pkill nginx
 sudo -u nginx nginx
