@@ -47,7 +47,7 @@ def main():
     file_name = "{}.csv".format(user_id)
 
     with open(file_name, mode="w", newline="") as file:
-        writer = csv.DictWriter(file, fieldnames=[
+        writer = csv.DictWriter(file, quoting=csv.QUOTE_ALL, fieldnames=[
                                                 "userId",
                                                 "username",
                                                 "completed",
