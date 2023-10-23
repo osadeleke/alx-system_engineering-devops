@@ -31,17 +31,18 @@ def main():
     # get api data from urls for users
     with urllib.request.urlopen(api_employee) as response:
         employ_data = json.loads(response.read().decode('utf-8'))
-        employ_name = employ_data['name']
+        # employ_name = employ_data.get(name)
+        employ_name = employ_data.get('name')
 
     # count the total task and task done
     done = 0
     total = 0
     done_tasks = []
     for value in main_dict:
-        if value['userId'] == user_id:
+        if value.get('userId') == user_id:
             total = total + 1
-            if value['completed'] == 1:
-                done_tasks.append(value['title'])
+            if value.get('completed') == 1:
+                done_tasks.append(value.get('title'))
                 done = done + 1
 
     # print the output
