@@ -47,7 +47,11 @@ def main():
     file_name = "{}.csv".format(user_id)
 
     with open(file_name, mode="w", newline="") as file:
-        writer = csv.DictWriter(file, fieldnames=["userId", "username",  "completed", "title"])
+        writer = csv.DictWriter(file, fieldnames=[
+                                                "userId",
+                                                "username",
+                                                "completed",
+                                                "title"])
         writer.writerows(csv_data)
 
 
