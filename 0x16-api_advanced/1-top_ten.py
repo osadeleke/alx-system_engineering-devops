@@ -7,13 +7,13 @@ import requests
 
 
 def top_ten(subreddit):
-    url = 'https://www.reddit.com/r/' + subreddit + '/hot.json'
+    url = 'https://www.reddit.com/r/' + subreddit + '/hot.json?limit=10'
 
     response = requests.get(url, headers={'User-Agent': 'YourApp/1.0'})
 
     if response.status_code == 200:
         data = response.json()
-        posts = data['data']['children'][:10]
+        posts = data['data']['children']
         for post in posts:
             print(post['data']['title'])
     else:
