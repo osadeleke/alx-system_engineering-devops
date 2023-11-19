@@ -1,3 +1,4 @@
+# replace wrong file path with right file path clearing 500 server error
 file { '/var/www/html/wp-settings.php':
   ensure => file,
 }
