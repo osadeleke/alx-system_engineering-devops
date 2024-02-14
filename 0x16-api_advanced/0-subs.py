@@ -14,6 +14,8 @@ def number_of_subscribers(subreddit):
         headers={'User-agent': 'my bot 0.1'})
 
     if results.status_code == 200:
-        return results.json().get('data').get('subscribers')
+        response_data = results.json()
+        subscribers = response_data['data']['subscribers']
+        return subscribers
     else:
         return 0

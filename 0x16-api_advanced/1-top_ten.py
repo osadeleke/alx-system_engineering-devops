@@ -12,7 +12,13 @@ def top_ten(subreddit):
     results = requests.get(
         f"https://www.reddit.com/r/{subreddit}/hot.json?limit=10",
         headers={"User-Agent": "my bot 0.1"})
-    final_results = results.json().get('data').get('children')
+    response_data = results.json()
+    # if results.status_code != 200:
+    #     print(None)
+    # else:
+    #     for i in range(10):
+    #         print(response_data['data']['children'][i]['data']['title'])
+    titles = response_data['data']['children']
+    print(titles)
 
-    for result in final_results:
-        print(result)
+    # print(response_data)
