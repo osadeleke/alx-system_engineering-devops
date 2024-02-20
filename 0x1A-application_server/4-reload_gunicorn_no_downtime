@@ -1,0 +1,5 @@
+#!/bin/bash
+SERVICE_FILE="/etc/systemd/system/gunicorn.service"
+
+# Reload the gunicorn service without downtime
+sudo systemctl reload-or-restart $SERVICE_FILE
